@@ -1,0 +1,51 @@
+<mat-card>
+  <mat-action-list>
+    <div mat-subheader>menu</div>
+
+    <button class=""  mat-list-item routerLink="/admin">
+      <div>
+        <img src="../../../../assets/home.png" alt="" class="image"><span class="ml-10">Home</span>
+      </div>
+    </button>
+
+    <button  mat-list-item routerLink="/admin/profile" class="mt-10 ">
+      <!-- <mat-icon mat-list-icon>account_circle</mat-icon>Profile -->
+      <img src="../../../../assets/contact.png" alt="" class="image"><span class="ml-10"> Your Profile</span>
+
+    </button>
+
+    
+
+    <button mat-list-item routerLink="/admin/add-category" class="mt-20" >
+      <!-- <mat-icon mat-list-icon>add_circle_outline</mat-icon>Add Categories -->
+      <img src="../../../../assets/add.png" alt="" class="image"><span class="ml-10">Add Category</span>
+    </button>
+
+    <button mat-list-item routerLink="/admin/categories" class="mt-20">
+      <!-- <mat-icon mat-list-icon>list</mat-icon>Categories -->
+      <img src="../../../../assets/menu.png" alt="" class="image"><span class="ml-10">View Category</span>
+    </button>
+
+   
+
+    <button mat-list-item  routerLink="/admin/add-quiz" class="mt-20">
+      <!-- <mat-icon mat-list-icon>add</mat-icon>Add Quiz -->
+      <img src="../../../../assets/add.png" alt="" class="image"><span class="ml-10">Add Quizzes</span>
+    </button>
+
+    <button mat-list-item routerLink="/admin/quizzes/0" class="mt-20" >
+      <!-- <mat-icon mat-list-icon >quiz</mat-icon>Quizzes -->
+      <img src="../../../../assets/edit.png" alt="" class="image"><span class="ml-10">View Quizzes</span>
+    </button>
+
+    <button mat-list-item  class="mt-20" >
+      <!-- <mat-icon mat-list-icon >quiz</mat-icon>Quizzes -->
+      <img src="../../../../assets/edit.png" alt="" class="image"><span class="ml-10">Active && DeActive Quizzes</span>
+    </button>
+
+    <button mat-list-item class="mt-20" >
+      <!-- <mat-icon mat-list-icon>logout</mat-icon>Logout -->
+      <img src="../../../../assets/arrow.png" alt="" class="image"><span class="ml-10" (click)="Logout()">Logout</span>
+    </button>
+  </mat-action-list>
+</mat-card>

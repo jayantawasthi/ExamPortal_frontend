@@ -1,0 +1,41 @@
+<!-- <h1>this is navbar hellow</h1> -->
+
+<mat-toolbar color="accent">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon mat-list-icon>menu_book</mat-icon>
+  </button>
+  <span>ExamPortal</span>
+  <span class="example-spacer"></span>
+  
+  <button
+    *ngIf="!isloggedIn"
+    [routerLink]="'/login'"
+     class="example-icon favorite-icon mr-20 btn btn-success " >
+    <img src="../../../../assets/contact.png" alt="" class="image"> <span class="ml-10"> Login</span>
+  </button>
+
+  <button *ngIf="!isloggedIn"  [routerLink]="'/signup'" class=" btn btn-primary ml-20 ">
+     
+    <img src="../../../../assets/Register.png" alt="" class="image"><span class="ml-10">Register</span>
+ </button>
+
+  <button *ngIf="isloggedIn" [routerLink]="(user.authorities[0].authority=='ADMIN')? '/admin/profile': '/user-dashboard/profile/'"
+     class="btn btn-primary mr-20 ml-20"
+  >
+    <img src="../../../../assets/contact.png" alt="" class="image ">
+    <span>{{ loginService.getUser().username }}</span>
+  </button>
+
+  <button
+    (click)="logout()"
+    *ngIf="isloggedIn"
+    class="btn btn-success mr-20 ml-20"
+  >
+    <img src="../../../../assets/arrow.png" alt="" class="image"><span class="">Logout</span>
+
+  </button>
+</mat-toolbar>

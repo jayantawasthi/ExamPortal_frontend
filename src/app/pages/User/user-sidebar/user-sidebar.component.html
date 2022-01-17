@@ -1,0 +1,33 @@
+<mat-card class="mt-70">
+  <mat-action-list>
+    <div mat-subheader><h1>Available Quizzes</h1></div>
+
+    <!-- <button mat-list-item >
+      <mat-icon mat-list-icon>home</mat-icon>Home
+      <div class="">
+        <img src="../../../../assets/home.png" alt="" class="image " /><span class="ml-10">Home</span
+        >
+      </div>
+    </button> -->
+
+    <button mat-list-item  [routerLink]= " '/user-dashboard/0/'+pageNumber " class="mt-20">
+      <!-- <mat-icon mat-list-icon>home</mat-icon>Home -->
+      <div class="">
+        <img src="../../../../assets/edit.png" alt="" class="image " /><span class="ml-10 ">All Quizzes</span
+        >
+      </div>
+    </button>
+
+    <button mat-list-item  class="mt-20" [routerLink]=" '/user-dashboard/'+c.cId+'/'+0" *ngFor="let c of categories">
+      <!-- <mat-icon mat-list-icon>home</mat-icon>Home -->
+      <div class="">
+        <img src="../../../../assets/arrow.png" alt="" class="image " /><span class="ml-10">{{c.title}}</span
+        >
+      </div>
+    </button>
+
+   
+
+    
+  </mat-action-list>
+</mat-card>

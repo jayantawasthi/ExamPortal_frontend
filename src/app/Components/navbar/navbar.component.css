@@ -1,0 +1,8 @@
+.example-spacer{
+    flex:.9 1 auto;
+}
+/* @import url(/node_modules/material-design-icons/iconfont/material-icons.css); */
+.image{
+    height: 25px;
+    width: 25px;
+}

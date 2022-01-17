@@ -1,0 +1,49 @@
+<mat-card >
+    <h2 class="text-center">welcome to profile</h2>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                    <img src="../../../assets/contact.png" class="img" alt="">
+                    <h2>{{user.username}}</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+
+                        <!-- table details -->
+                        <table class="table text-center" height="150px"  width="300px">
+                            <tr *ngIf=user.uid>
+                                <td>Id</td>
+                                <td>{{user.uid}}</td>
+                            </tr>
+                            <tr *ngIf=user.username>
+                                <td>Username</td>
+                                <td>{{user.username}}</td>
+                            </tr>
+                            <tr *ngIf=user.email>
+                                <td>Email</td>
+                                <td>{{user.email}}</td>
+                            </tr>
+                            <tr *ngIf=user.phone>
+                                <td>phone</td>
+                                <td>{{user.phone}}</td>
+                            </tr>
+                            <tr *ngIf=user.authorities>
+                                <td>Role</td>
+                                <td>{{user.authorities[0].authority}}</td>
+                            </tr>
+                            <tr *ngIf=user.enabled>
+                                <td>Status</td>
+                                <td>{{user.enabled?"ACTIVE":"NOACTIVE"}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+        <button mat-raised-button color="primary" class="ml-20">UPADATE</button>
+        <button mat-raised-button color="warn">SHARE</button>
+    </mat-card-actions>
+</mat-card>

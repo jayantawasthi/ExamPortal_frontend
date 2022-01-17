@@ -1,0 +1,79 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 mt-50">
+        <mat-card>
+          <div class="container text-center">
+            <img class="img" src="../../../assets/Register.png" alt="">
+            <mat-icon>home </mat-icon>
+          </div>
+          <h1 class="text-center">Register Here</h1>
+
+          <!-- {{ User | json }} -->
+
+          <form (ngSubmit)="formSubmit()" class="mt-20" autocomplete="off">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Username</mat-label>
+              <input
+                [(ngModel)]="User.username"
+                name="username"
+                type="text"
+                required
+                matInput
+                placeholder="Enter your name"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input
+                [(ngModel)]="User.password"
+                name="password"
+                type="password"
+                required
+                matInput
+                placeholder="Enter your Password"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input
+                [(ngModel)]="User.email"
+                name="email"
+                type="email"
+                required
+                matInput
+                placeholder="Enter your name"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Phone</mat-label>
+              <input
+                [(ngModel)]="User.phoneNumber"
+                name="phoneNumber"
+                type="number"
+                required
+                matInput
+                placeholder="Enter your Phone Number"
+              />
+            </mat-form-field>
+
+            <div class="container text-center">
+              <button mat-raised-button color="accent">Register</button>
+              <button
+                mat-raised-button
+                color="primary"
+                type="reset"
+                class="ml-20"
+              >
+                Clear
+              </button>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

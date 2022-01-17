@@ -1,0 +1,69 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <!-- <h1>instructions</h1> -->
+                <!-- instructions -->
+            </div>
+
+            <div class="col-md-8" *ngIf="questions" >
+                <!-- questions -->
+               <div class="text-center">
+                <ng-container *ngIf="questions" >
+                    <h1>
+                        On going Quiz <b>{{ questions[0].quiz.title }}</b>
+                    </h1>
+                    <button class="btn btn-dark">Submit Quiz</button>
+                </ng-container>
+               </div>
+
+                <mat-card *ngFor="let q of questions; let i = index" class="mt-10">
+                    <mat-card-content>
+                       <h2> <p class="mr-20"> <b>Qn.({{ i + 1 }}) </b>  <span [innerHTML]="q.content"></span> </p></h2>
+                    </mat-card-content>
+                    <mat-divider></mat-divider>
+
+                    <div class="row ml-20 ">
+                        <div class="col-md-6">
+                            <input type="radio" [value]="q.option1" [name]="i" />   {{q.option1}}
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="radio" [value]="q.option2" [name]="i" />   {{ q.option2}}
+                        </div>
+                    </div>
+
+                    <div class="row ml-20 mt-10">
+                        <div class="col-md-6">
+                            <input type="radio" [value]="q.option3" [name]="i" />   {{q.option3}}
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="radio" [value]="q.option4" [name]="i" />   {{q.option4}}
+                        </div>
+                    </div>
+                </mat-card>
+
+                <div class="text-center mt-70" *ngIf="questions.length==0">
+                    <mat-card>
+                        <mat-card-content><h1>There Is No Any Questions Available In This Quiz !! Thank for Visit </h1></mat-card-content>
+                        <!-- <button class="btn btn-success" [routerLink]="'/user-dashboard/0/0'"> Back to Home</button> -->
+                    </mat-card>
+                </div>
+                <!-- <div class="row mt-10">
+                    <button class="btn btn-success">Privious</button>
+                    <button class="btn btn-primary"></button>
+                    <button class="btn btn-dark">Next</button>
+                </div> -->
+            </div>
+
+            
+
+           
+
+            <div class="col-md-2">
+                <!-- progress -->
+            </div>
+        </div>
+    </div>
+</div>

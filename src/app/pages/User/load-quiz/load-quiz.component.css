@@ -1,0 +1,12 @@
+.truncate{
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.arrow-img{
+    background-image: url(../../../../assets/settings.png);
+    background-size: cover;
+}

@@ -1,0 +1,46 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <h1 class="mt-20">Available Quizzes</h1>
+
+    <div class="row" *ngIf="quizzes">
+      <div class="col-md-6" *ngFor="let q of quizzes">        
+        <mat-card class="mb-10 ">
+
+          <mat-card-header>
+            <div mat-card-avatar class="arrow-img"></div>
+            <mat-card-title>{{ q.title }}</mat-card-title>
+            <mat-card-subtitle>{{ q.category.title }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p class="truncate">{{ q.description }}</p>
+          </mat-card-content>
+
+          <mat-card-actions>            
+              <button color="primary" mat-raised-button  >View</button>              
+              <button color="warn" mat-raised-button [routerLink]="'/user-dashboard/instructions/'+q.qId" >Start</button>
+              <button color="accent" mat-raised-button >Questions {{q.numberOfQuestions}}</button>
+              <button color="warn" mat-raised-button  >maxMarks {{q.maxMarks}}</button>              
+            </mat-card-actions>
+            <mat-divider></mat-divider>
+            
+        </mat-card>  
+      </div> 
+      
+    <div class="col-md-12" *ngIf="quizzes.length==0">
+      <mat-card>
+        <mat-card-content>
+          <h1>No Data in this category</h1>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    
+  </div>
+  
+  <div class="row mt-20 ml-250 text-center *ngIf=" *ngIf="totalElements>4" >       
+    <button  class="btn btn-primary  ml-10"  *ngIf="!(id<0) " [routerLink]="(catid!=-1)?'/user-dashboard/0/'+privious:'/user-dashboard/'+catid+'/'+privious">privious</button>          
+    <button  class="btn btn-dark ml-10" *ngFor="let i of totalpage"  [routerLink]="(catid==0)?'/user-dashboard/0/'+i:'/user-dashboard/'+catid+'/'+i" >{{i+1}}</button>
+    <button  class="btn btn-secondary ml-10" *ngIf="id+1!=Page"  [routerLink]="(catid==0)?'/user-dashboard/0/'+next:'/user-dashboard/'+catid+'/'+next" >Next</button>
+  </div>
+  
+</div>

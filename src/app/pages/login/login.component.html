@@ -1,0 +1,63 @@
+<div class="bootstrap-wrapper mt-70">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 text-center mt-50">
+        <mat-card>
+          <div class="container text-center">
+            <img src="../../../assets/arrow.png" class="img" alt="">
+          </div>
+
+          <h1 class="text-center">Login Here</h1>
+
+          {{ loginData | json }}
+
+          <form (ngSubmit)="formSubmit()" class="mt-20" autocomplete="off">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Username</mat-label>
+              <input
+                [(ngModel)]="loginData.username"
+                name="username"
+                type="text"
+                matInput
+                required
+                placeholder="Enter your name"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input
+                [(ngModel)]="loginData.password"
+                name="password"
+                type="password"
+                required
+                matInput
+                placeholder="Enter your Password"
+              />
+            </mat-form-field>
+
+            <div class="container">
+              <button mat-raised-button color="warn">Login</button>
+              <button
+                mat-raised-button
+                color="accent"
+                type="reset"
+                class="ml-20"
+              >
+                Reset
+              </button>
+            </div>
+          </form>
+        </mat-card>
+
+        <div class="container mt-10">
+          
+           <div class="text-color" > <h2> <a [routerLink]="'/signup'" class="link">I don't have account.Create new account</a></h2></div>         
+         
+            <div class="mt-10 text-color"> <h2><a href="" class="link">forgot password.Reset password</a> </h2></div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
